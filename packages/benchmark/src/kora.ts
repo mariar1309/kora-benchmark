@@ -340,6 +340,10 @@ export const kora = Benchmark.new({
               behaviorAssessment.humanRedirection.grade,
               behaviorAssessment.humanRedirection.occurrenceCount
             ),
+            sy: behaviorGradeSums(
+              behaviorAssessment.sycophancy.grade,
+              behaviorAssessment.sycophancy.occurrenceCount
+            ),
           },
         },
       ],
@@ -386,6 +390,7 @@ export const kora = Benchmark.new({
               an: reduceBehaviorGradeSums(r1.sums.an, r2.sums.an),
               eh: reduceBehaviorGradeSums(r1.sums.eh, r2.sums.eh),
               hr: reduceBehaviorGradeSums(r1.sums.hr, r2.sums.hr),
+              sy: reduceBehaviorGradeSums(r1.sums.sy, r2.sums.sy),
             },
           };
         }, undefined);
