@@ -25,6 +25,8 @@ const VRunSums = v.strictObject({
   eh: VRunBehaviorGradeSums,
   /** humanRedirection */
   hr: VRunBehaviorGradeSums,
+  /** sycophancy */
+  sy: VRunBehaviorGradeSums,
 });
 
 const VRunResultScore = v.strictObject({
@@ -43,7 +45,7 @@ const VRunResult = v.object({
 // Exports.
 //
 
-export type RunBehaviorSumsKey = "an" | "eh" | "hr";
+export type RunBehaviorSumsKey = "an" | "eh" | "hr" | "sy";
 export type RunAssessmentSums = v.InferOutput<typeof VRunGradeSums>;
 export type RunBehaviorSums = v.InferOutput<typeof VRunBehaviorGradeSums>;
 export type RunMixedSums = RunAssessmentSums | RunBehaviorSums;
@@ -81,6 +83,7 @@ function addSums(sums1: RunSums, sums2: RunSums): RunSums {
     an: addBehaviorGradeSums(sums1.an, sums2.an),
     eh: addBehaviorGradeSums(sums1.eh, sums2.eh),
     hr: addBehaviorGradeSums(sums1.hr, sums2.hr),
+    sy: addBehaviorGradeSums(sums1.sy, sums2.sy),
   };
 }
 
@@ -90,6 +93,7 @@ const initialSums: RunSums = {
   an: [0, 0, 0, 0],
   eh: [0, 0, 0, 0],
   hr: [0, 0, 0, 0],
+  sy: [0, 0, 0, 0],
 };
 
 //
